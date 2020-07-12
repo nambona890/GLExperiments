@@ -2,18 +2,18 @@
 #extension GL_ARB_gpu_shader_fp64 : enable
 
 out vec4 FragColor;
-in vec2 uv;
+in highp vec2 uv;
 uniform int iterations;
 
 void main()
 {
 	//FragColor = vec4(0.5 * sin(uv.x) + 0.5,0.5 * sin(uv.y) + 0.5, 1.0, 1.0);
-	double re = 0;
-	double im = 0;
-	double cr = uv.x;
-	double ci = uv.y;
-	double zr = 0;
-	double zi = 0;
+	highp double re = 0;
+	highp double im = 0;
+	highp double cr = uv.x;
+	highp double ci = uv.y;
+	highp double zr = 0;
+	highp double zi = 0;
 	int n = 0;
 	while((zr * zr + zi * zi) < 4.0 && n < iterations)
 	{

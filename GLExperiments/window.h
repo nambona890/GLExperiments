@@ -34,7 +34,7 @@ private:
 
     Vec2 ScreenNormalize(const Vec2& v)
     {
-        return { (v.x / (sWidth*2)) - 1,(v.y / (sHeight * 2)) - 0.5 };
+        return { (v.x / (sWidth / 2)) - 1,(v.y / (sHeight / 2)) - 1 };
     }
 
     Vec2 WtS(const Vec2& v)

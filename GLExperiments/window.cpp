@@ -75,14 +75,14 @@ int NamWindow::Start()
         double endTime = glfwGetTime() - startTime;
         char title[256];
         title[255] = '\0';
-        snprintf(title, 255, "%3.3f", (float)endTime);
-        glfwSetWindowTitle(window, title);
 
         /* Poll for and process events */
         glfwPollEvents();
         Vec2 cursor;
         glfwGetCursorPos(window, &cursor.x, &cursor.y);
         cursor = ScreenNormalize(cursor);
+        snprintf(title, 255, "%3.3f - %3.1f %3.1f", (float)endTime, (float)cursor.x, (float)cursor.y);
+        glfwSetWindowTitle(window, title);
 
         if (glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT) == GLFW_PRESS)
         {
